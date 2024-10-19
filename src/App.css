@@ -1,0 +1,44 @@
+.app {
+  display: flex;
+}
+
+.sections {
+  flex-grow: 1;
+  padding-left: 250px; /* Adjust for the navbar width */
+}
+
+.section {
+  min-height: 100vh; /* Full viewport height */
+  display: flex;
+  align-items: center; /* Center vertically */
+  justify-content: center; /* Center horizontally */
+  padding: 0 50px; /* Optional padding for spacing */
+  scroll-snap-align: start;
+}
+
+.content {
+  max-width: 900px;
+  text-align: center; /* Center content */
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #00ffff; /* Sleek and modern color */
+}
+
+p {
+  font-size: 1.25rem;
+  color: #888; /* Subtle text color */
+}
+
+.section h2, .section h3 {
+  color: #fff; /* Matching modern design */
+}
+
+.project-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}

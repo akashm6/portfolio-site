@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/static/css/main.30a91361.css",
+    "main.js": "/static/js/main.455bf58e.js",
+    "static/js/453.1407b060.chunk.js": "/static/js/453.1407b060.chunk.js",
+    "static/media/linkedinpfp.jpeg": "/static/media/linkedinpfp.021177bd250dcf8870f9.jpeg",
+    "static/media/jpg": "/static/media/622921553f7fb6bb98b2cdaba1eae58d.67c893c546df2d7d36d8.jpg",
+    "static/media/_stickpeoplesticker-caterpillar-cat-logo-D_NQ_NP_992541-MCO31035067552_062019-F.webp": "/static/media/5ee732bebd98394ea1ff2806_stickpeoplesticker-caterpillar-cat-logo-D_NQ_NP_992541-MCO31035067552_062019-F.83a98b4d6af9926ae1a2.webp",
+    "index.html": "/index.html",
+    "main.30a91361.css.map": "/static/css/main.30a91361.css.map",
+    "main.455bf58e.js.map": "/static/js/main.455bf58e.js.map",
+    "453.1407b060.chunk.js.map": "/static/js/453.1407b060.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.30a91361.css",
+    "static/js/main.455bf58e.js"
+  ]
+}

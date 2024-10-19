@@ -1,0 +1,23 @@
+body {
+  margin: 0;
+  font-family: 'Poppins';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  background: #0d0d0d;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+main {
+  scroll-behavior: smooth; /* Ensure smooth scrolling for main sections */
+}
+
+body {
+  overscroll-behavior: contain; /* Prevent rubber-banding effect */
+}
