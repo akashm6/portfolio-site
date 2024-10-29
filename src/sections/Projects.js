@@ -2,78 +2,79 @@ import React from 'react';
 import styled from 'styled-components';
 
 const ProjectsSection = styled.section`
-  padding: 50px 100px;
+  padding: 3rem 6rem; /* Use rem for padding */
   background-color: #0d0d0d;
   background-image: linear-gradient(transparent 98%, rgba(255, 255, 255, 0.05) 2%), 
                   linear-gradient(90deg, transparent 98%, rgba(255, 255, 255, 0.05) 2%);
-  background-size: 30px 30px; /* Make the grid smaller */
-
+  background-size: 2rem 2rem; 
   color: #e6e6e6;
   display: flex;
   flex-direction: column;
   justify-content: center;
 
   h2 {
-    font-size: 45px;
-    margin-bottom: 40px;
+    font-size: 2.8rem;
+    margin-bottom: 2.5rem;
     color: #8a2be2;
     text-align: center;
-    letter-spacing: 1px;
+    letter-spacing: 0.1rem;
   }
 
   .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 40px; 
+    grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr)); /* Responsive grid */
+    gap: 2.5rem;
+    max-width: 1200px; /* Set max width for better control */
+    margin: 0 auto; /* Center the grid */
   }
 
   .project-card {
     background-color: #111;
-    padding: 20px;
-    border-radius: 10px;
+    padding: 1.25rem;
+    border-radius: 0.625rem;
     transition: all 0.3s ease-in-out;
     border: 1px solid transparent;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    min-height: 300px; 
+    min-height: 18.75rem;
     position: relative;
 
     &:hover {
-      transform: translateY(-5px);
+      transform: translateY(-0.3125rem);
       border-color: #8a2be2;
-      box-shadow: 0 0 20px rgba(138, 43, 226, 0.6);
+      box-shadow: 0 0 1.25rem rgba(138, 43, 226, 0.6);
     }
 
     h3 {
-      font-size: 24px;
+      font-size: 1.5rem;
       color: #e6e6e6;
-      margin-bottom: 10px;
+      margin-bottom: 0.625rem;
     }
 
     p {
       color: #b0b0b0;
-      margin-bottom: 15px;
+      margin-bottom: 1rem;
     }
 
     .tools {
       display: flex;
       flex-wrap: wrap;
-      gap: 8px;
-      margin-bottom: 15px;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
 
       .tool {
         background-color: #1e1e1e;
         color: #e6e6e6;
-        padding: 4px 12px;
-        border-radius: 20px;
-        font-size: 12px;
+        padding: 0.25rem 0.75rem;
+        border-radius: 1.25rem;
+        font-size: 0.75rem;
         text-transform: uppercase;
-        letter-spacing: 0.5px;
+        letter-spacing: 0.03rem;
         transition: all 0.3s ease-in-out;
 
         &:hover {
-          box-shadow: 0 0 10px rgba(138, 43, 226, 0.6);
+          box-shadow: 0 0 0.625rem rgba(138, 43, 226, 0.6);
           border-color: #8a2be2;
         }
       }
@@ -87,8 +88,36 @@ const ProjectsSection = styled.section`
 
       &:hover {
         color: #e6e6e6;
-        text-shadow: 0 0 8px #8a2be2;
+        text-shadow: 0 0 0.5rem #8a2be2;
       }
+    }
+  }
+
+  /* Media queries to adjust layout on smaller screens */
+  @media (max-width: 1200px) {
+    padding: 3rem; /* Reduce padding on smaller screens */
+  }
+
+  @media (max-width: 768px) {
+    .projects-grid {
+      grid-template-columns: 1fr; /* One column layout on smaller screens */
+      padding: 0;
+    }
+
+    h2 {
+      font-size: 2.4rem; /* Adjust heading size for smaller screens */
+    }
+  }
+
+  @media (max-width: 480px) {
+    padding: 1.5rem;
+    
+    h2 {
+      font-size: 2rem; /* Further adjust heading size */
+    }
+
+    .project-card {
+      padding: 1rem; /* Smaller padding on project cards */
     }
   }
 `;
@@ -105,7 +134,6 @@ const Projects = () => (
           <span className="tool">Postgres</span>
           <span className="tool">React.js</span>
           <span className="tool">Flask</span>
-          <span className="tool">React.js</span>
           <span className="tool">JavaScript</span>
           <span className="tool">Google Maps API</span>
           <span className="tool">SpotiPy</span>
