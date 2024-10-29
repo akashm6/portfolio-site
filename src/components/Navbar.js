@@ -1,10 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled, { keyframes } from 'styled-components';
 import { Link } from 'react-scroll';
+import { FaBars } from 'react-icons/fa';
 
-const fadeIn = keyframes`
-  from { opacity: 0; }
-  to { opacity: 1; }
+const slideIn = keyframes`
+  0% {
+    transform: translateX(-20px) scale(0.95);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0) scale(1);
+    opacity: 1;
+  }
 `;
 
 const NavBar = styled.nav`
@@ -20,15 +27,44 @@ const NavBar = styled.nav`
   transition: opacity 1s ease-in;
 `;
 
-const NavItems = styled.ul`
-  list-style: none;
-  display: flex;
-  gap: 30px;
-  margin: 0;
-  padding: 0;
+const MenuIcon = styled.div`
+  font-size: 24px;
+  color: #ccd6f6;
+  cursor: pointer;
+  position: fixed;
+  left: 15px;
+  @media (min-width: 768px) {
+    display: none;  
+  }
 `;
 
-const NavItem = styled.li`
+const MenuItems = styled.div`
+  /* Desktop view */
+  display: flex;
+  gap: 20px;
+
+  /* Mobile view adjustments */
+  @media (max-width: 768px) {
+    flex-direction: column;
+    display: ${({ isOpen }) => (isOpen ? 'flex' : 'none')};
+    position: fixed;
+    top: 65px;
+    left: ${({ isOpen }) => (isOpen ? '0' : '-100%')}; 
+    width: 220px;
+    padding: 20px;
+    background: rgba(13, 13, 13, 0.95);
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(5px);
+    transition: left 0.4s cubic-bezier(0.77,0.2,0.05,1.0);
+
+    & > div {
+      animation: ${({ isOpen }) => (isOpen ? slideIn : 'none')} 0.5s ease forwards;
+      opacity: 0;
+    }
+  }
+`;
+
+const NavItem = styled.div`
   a {
     display: inline-block;
     padding: 10px 20px;
@@ -47,13 +83,23 @@ const NavItem = styled.li`
       box-shadow: 0 0 10px 3px rgba(138, 43, 226, 0.5);
       transform: scale(1.05);
     }
+
+    @media (max-width: 768px) {
+      padding: 8px 16px;
+      font-size: 14px;
+    }
   }
 `;
 
 const Navbar = ({ isLoaded }) => {
+  const [isOpen, setOpen] = useState(false);
+
   return (
     <NavBar isLoaded={isLoaded}>
-      <NavItems>
+      <MenuIcon onClick={() => setOpen(!isOpen)}>
+        <FaBars />
+      </MenuIcon>
+      <MenuItems isOpen={isOpen}>
         <NavItem>
           <Link to="home" smooth duration={500}>home</Link>
         </NavItem>
@@ -69,7 +115,7 @@ const Navbar = ({ isLoaded }) => {
         <NavItem>
           <Link to="contact" smooth duration={500}>contact</Link>
         </NavItem>
-      </NavItems>
+      </MenuItems>
     </NavBar>
   );
 };
