@@ -84,6 +84,10 @@ const HeroSection = styled.section`
                   linear-gradient(90deg, transparent 98%, rgba(255, 255, 255, 0.05) 2%);
   background-size: 30px 30px;
 
+  @media (max-width: 768px) {
+    height: 90vh;
+  }
+
   color: #e6e6e6;
   padding: 0 150px;
   position: relative;
@@ -98,7 +102,15 @@ const HeroSection = styled.section`
     display: inline-block;
     opacity: 0; /* Start with invisible text */
     animation: ${({ isLoaded }) => (isLoaded ? textSlideIn : 'none')} 1s ease-out forwards; 
+
+    @media (max-width: 768px) {
+      position: absolute;
+      left: 40px;
+      top: 40vh;
+    }
   }
+
+    
 
   .contact-btn {
     background-color: transparent;
@@ -124,14 +136,27 @@ const HeroSection = styled.section`
       box-shadow: 0 0 10px 3px rgba(138, 43, 226, 0.5);
       transform: scale(1.05);
     }
+
+    @media (max-width: 768px) {
+      position: absolute;
+      left: 40px;
+      top: 54vh;
+
+    }
   }
 `;
 
 const SocialBox = styled.div`
   margin-top: 20px;
   display: flex;
-  gap: 20px;
+  gap: 25px;
   align-items: center;
+
+  @media (max-width: 768px) {
+      position: absolute;
+      left: 40px;
+      top: 60vh;
+    }
 
   a {
     color: #e6e6e6;
@@ -140,6 +165,10 @@ const SocialBox = styled.div`
     &:hover {
       color: #8a2be2;
       transform: scale(1.1);
+
+    @media (max-width: 768px) {
+        height: 100%;
+      }
     }
   }
 `;
