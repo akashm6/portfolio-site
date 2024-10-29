@@ -7,43 +7,65 @@ const AboutSection = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 0 150px;
+  padding: 0 10rem; 
   color: #e6e6e6;
   background-image: linear-gradient(transparent 98%, rgba(255, 255, 255, 0.05) 2%), 
-                  linear-gradient(90deg, transparent 98%, rgba(255, 255, 255, 0.05) 2%);
-  background-size: 30px 30px; 
+                    linear-gradient(90deg, transparent 98%, rgba(255, 255, 255, 0.05) 2%);
+  background-size: 2rem 2rem; 
 
-  .about-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 50px; 
+  @media (min-width: 768px) {
+    margin-top: -2rem; /* Push up the content slightly on larger screens */
   }
 
-  .about-image {
-    width: 40%;
-    img {
-      border-radius: 10px;
-      width: 100%;
-      height: auto;
-    }
-  }
-
-  .about-accordion {
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    transform: translateY(-30px); 
+  @media (max-width: 768px) {
+    padding: 2rem 1.5rem; 
+    min-height: 110vh;
   }
 
   h2 {
     font-size: 50px;
     margin-bottom: 20px;
-    transform: translateY(-30px); 
     color: #8a2be2;
+    @media (max-width: 768px) {
+      margin-top: 0rem;
+    }
+  }
+
+  .about-image {
+    width: 40%;
+    @media (max-width: 768px) {
+      width: 30vh;
+    }
+    img {
+      border-radius: 0.625rem;
+      width: 100%;
+      height: auto;
+
+      @media (max-width: 768px) {
+        margin-top: -1rem;
+      }
+    }
+  }
+
+  .about-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 3.125rem;
+    
+    @media (max-width: 768px) {
+      flex-direction: column; 
+    }
+  }
+
+  .about-accordion {
+    width: 50%;
+
+    @media (max-width: 768px) {
+      width: 100%; 
+    }
   }
 `;
-
 
 const AccordionItem = styled.div`
   background-color: #111;
@@ -75,8 +97,11 @@ const AccordionItem = styled.div`
     padding: ${({ isOpen }) => (isOpen ? '10px' : '0 15px')};
     font-size: 16px;
     color: #b0b0b0;
-    transition: max-height 0.5s ease-in-out, padding 0.5s ease-in-out;
+    transition: max-height 0.6s ease-in-out, padding 0.6s ease-in-out;
 
+    @media (max-width: 768px) {
+      font-size: 14px;
+    }
     ul {
       padding-left: 20px;
       list-style: disc;
@@ -97,18 +122,20 @@ const About = () => {
 
   return (
     <AboutSection id="about">
+      <h2>about</h2>
       <div className="about-content">
+      
         <div className="about-image">
           <img src={linkedinpfp} alt="Your Name" />
         </div>
         <div className="about-accordion">
-          <h2>about</h2>
+
           <AccordionItem isOpen={openIndex === 1} onClick={() => toggleAccordion(1)}>
-            <div className="question">me!</div>
+            <div className="question">me</div>
             <div className="answer">
               <ul>
-                <li>I'm a third-year undergraduate at the University of Wisconsin-Madison majoring in Computer Science & Data Science. </li>
-                <li>I'm fascinated by the synergy of software and data, and how we can further push their interactions to craft new solutions!</li>
+                <li>I'm a third-year undergraduate at the University of Wisconsin-Madison majoring in Computer Science & Data Science.</li>
+                <li>I'm fascinated by the synergy of software and data, and how we can further push their interactions to craft new solutions.</li>
                 <li>Originally from Naperville, IL!</li>
               </ul>
             </div>
@@ -120,9 +147,8 @@ const About = () => {
                 <li>everything about full-stack development</li>
                 <li>cloud architecture and scalability (notably AWS)</li>
                 <li>applications of supervised learning</li>
-                <li>data visualization tools (tableau, power BI, d3.js) </li>
+                <li>data visualization tools (tableau, power BI, d3.js)</li>
                 <li>trying out different databases, both SQL and NoSQL</li>
-                <li>and more!</li>
               </ul>
             </div>
           </AccordionItem>
