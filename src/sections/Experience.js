@@ -4,50 +4,49 @@ import yellow_cat_logo from '../622921553f7fb6bb98b2cdaba1eae58d.jpg';
 import skills_logo from '../skills_for_chicagolands_future_logo.jpeg';
 
 const ExperienceSection = styled.section`
-  padding: 100px 100px;
+  padding: 6.25rem 6.25rem; 
   display: flex;
   flex-direction: column;
   justify-content: center;
   background-color: #0d0d0d;
   color: #e6e6e6;
-  scroll-margin-top: 100px;
+  scroll-margin-top: 6.25rem;
   background-image: linear-gradient(transparent 98%, rgba(255, 255, 255, 0.05) 2%), 
-                  linear-gradient(90deg, transparent 98%, rgba(255, 255, 255, 0.05) 2%);
-  background-size: 30px 30px; 
-
+                    linear-gradient(90deg, transparent 98%, rgba(255, 255, 255, 0.05) 2%);
+  background-size: 1.875rem 1.875rem; 
 
   h2 {
-    font-size: 45px;
-    margin-bottom: 40px;
+    font-size: 2.8125rem; 
+    margin-bottom: 2.5rem; 
     color: #8a2be2;
     text-align: center;
-    letter-spacing: 1px;
+    letter-spacing: 0.0625rem; 
   }
 
   .experience-card {
     position: relative;
     background-color: #1a1a1a;
-    padding: 30px;
-    border-radius: 12px;
-    margin-bottom: 30px;
+    padding: 1.875rem; 
+    border-radius: 0.75rem; 
+    margin-bottom: 1.875rem; 
     transition: all 0.3s ease-in-out;
     display: flex;
     flex-direction: row;
     align-items: center;
-    border: 1px solid #2a2a2a;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border: 0.0625rem solid #2a2a2a; 
+    box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.1); 
 
     &:hover {
-      transform: translateY(-3px);
+      transform: translateY(-0.1875rem); 
       border-color: #8a2be2;
-      box-shadow: 0 0 25px rgba(138, 43, 226, 0.4);
+      box-shadow: 0 0 1.5625rem rgba(138, 43, 226, 0.4); 
     }
 
     .logo {
       flex-shrink: 0;
-      width: 60px;
-      height: 60px;
-      margin-right: 20px;
+      width: 3.75rem; 
+      height: 3.75rem; 
+      margin-right: 1.25rem; 
       display: flex;
       justify-content: center;
       align-items: center;
@@ -66,65 +65,94 @@ const ExperienceSection = styled.section`
       flex-direction: column;
 
       .company {
-        font-size: 22px;
+        font-size: 1.375rem; 
         font-weight: bold;
         color: #8a2be2;
-        margin-bottom: 10px;
+        margin-bottom: 0.625rem; 
       }
 
       h3 {
-        font-size: 16px;
-        margin-bottom: 12px;
+        font-size: 1rem; 
+        margin-bottom: 0.75rem; 
         color: #e6e6e6;
         font-weight: 500;
       }
 
       ul {
-        margin-bottom: 15px;
-        padding-left: 20px;
+        margin-bottom: 0.9375rem; 
+        padding-left: 1.25rem; 
         list-style-type: disc;
 
         li {
-          margin-bottom: 6px;
+          margin-bottom: 0.375rem; 
           line-height: 1.5;
-          font-size: 15px;
+          font-size: 0.9375rem; 
         }
       }
     }
 
     .timeframe-location {
+      position: absolute;
+      top: 0.8125rem; 
+      right: 0.8125rem; 
       display: flex;
       flex-direction: column;
       align-items: flex-end;
-      font-size: 13px;
+      font-size: 0.8125rem; 
       color: #b0b0b0;
 
       .timeframe {
-        margin-bottom: 5px;
+        margin-bottom: 0.3125rem; 
       }
     }
 
     .skills {
       display: flex;
       flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 10px;
+      gap: 0.5rem;
+      margin-top: 0.625rem; 
 
       .skill {
         background-color: #2a2a2a;
         color: #e6e6e6;
-        padding: 4px 12px;
-        border-radius: 20px;
-        font-size: 12px;
+        padding: 0.25rem 0.75rem; 
+        border-radius: 1.25rem;
+        font-size: 0.75rem; 
         transition: all 0.3s ease-in-out;
         text-transform: uppercase;
-        letter-spacing: 0.4px;
+        letter-spacing: 0.025rem; 
 
         &:hover {
-          box-shadow: 0 0 10px rgba(138, 43, 226, 0.6);
+          box-shadow: 0 0 0.625rem rgba(138, 43, 226, 0.6); 
           border-color: #8a2be2;
         }
       }
+    }
+
+    @media (max-width: 768px) {
+      flex-direction: column; 
+      align-items: flex-start; 
+      padding: 1.25rem;
+      
+      .logo {
+        margin-bottom: 1rem; 
+      }
+
+      .timeframe-location {
+        position: absolute;
+        top: 1rem;
+        right: 1rem; 
+        align-items: flex-start; 
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    padding: 2rem 1rem; 
+
+    h2 {
+      font-size: 2rem; 
+      margin-top: 2rem;
     }
   }
 `;
@@ -194,7 +222,6 @@ const Experience = () => (
         <div className="location">Chicago, IL</div>
       </div>
     </div>
-
   </ExperienceSection>
 );
 
