@@ -3,10 +3,6 @@ import styled from 'styled-components';
 
 const ProjectsSection = styled.section`
   padding: 3rem 6rem; /* Use rem for padding */
-  background-color: #0d0d0d;
-  background-image: linear-gradient(transparent 98%, rgba(255, 255, 255, 0.05) 2%), 
-                  linear-gradient(90deg, transparent 98%, rgba(255, 255, 255, 0.05) 2%);
-  background-size: 2rem 2rem; 
   color: #e6e6e6;
   display: flex;
   flex-direction: column;
@@ -22,7 +18,7 @@ const ProjectsSection = styled.section`
 
   .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr)); /* Responsive grid */
+    grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr)); 
     gap: 2.5rem;
     max-width: 1200px; /* Set max width for better control */
     margin: 0 auto; /* Center the grid */
