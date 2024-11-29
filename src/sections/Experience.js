@@ -8,12 +8,8 @@ const ExperienceSection = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-color: #0d0d0d;
   color: #e6e6e6;
   scroll-margin-top: 6.25rem;
-  background-image: linear-gradient(transparent 98%, rgba(255, 255, 255, 0.05) 2%), 
-                    linear-gradient(90deg, transparent 98%, rgba(255, 255, 255, 0.05) 2%);
-  background-size: 1.875rem 1.875rem; 
 
   h2 {
     font-size: 2.8125rem; 
@@ -168,13 +164,14 @@ const Experience = () => (
         <div className="company">Caterpillar</div>
         <h3>Software/Data Engineer Intern</h3>
         <ul>
-          <li>Served as a backend developer for a prototyped CAT full-stack rental app.</li>
+          <li>Constructed a full-stack rentall app prototype.</li>
           <ul>
             <li>Utilized React.js, Next.js, and Flask to build key components.</li>
-            <li>Implemented user email functionality and integrated Google Maps API for real-time telematic information.</li>
+            <li>Integrated Google Maps API for real-time telematics.</li>
+            <li>Built email notifications supporting up to 1,000 simultaneous users using AWS SES.</li>
           </ul>
           <li>Optimized automated Alteryx daily-refresh workflows, improving runtimes of dashboard updates by ~5%.</li>
-          <li>Standardized daily-use client Tableau dashboards, maintaining crucial data-blending from Snowflake data sources.</li>
+          <li>Standardized client Tableau dashboards for 800+ daily users, leveraging TabPy for automation scripting.</li>
           <li>Currently working part-time remotely.</li>
         </ul>
 
@@ -186,7 +183,9 @@ const Experience = () => (
           <span className="skill">Tableau</span>
           <span className="skill">Alteryx</span>
           <span className="skill">SQL</span>
+          <span className="skill">AWS</span>
           <span className="skill">Snowflake</span>
+          <span className="skill">TabPy</span>
         </div>
       </div>
       <div className="timeframe-location">
@@ -202,7 +201,7 @@ const Experience = () => (
         <div className="company">Skills for Chicagoland's Future</div>
         <h3>Systems & Data Insights Intern</h3>
         <ul>
-          <li>Created a Python-based Excel script that uses 3 APIs to take client address data, convert them to coordinates, and return commute distances with ~95% accuracy.</li>
+          <li>Created a Python-based Excel script that utilizes PyXLL and Nominatim to transfer client address data into coordinates and return commute distances with ~95% accuracy.</li>
           <ul>
             <li>Used the script to identify trends on Chicago unemployment retention rates.</li>
           </ul>
