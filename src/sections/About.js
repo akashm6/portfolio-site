@@ -9,12 +9,9 @@ const AboutSection = styled.section`
   justify-content: center;
   padding: 0 10rem; 
   color: #e6e6e6;
-  background-image: linear-gradient(transparent 98%, rgba(255, 255, 255, 0.05) 2%), 
-                    linear-gradient(90deg, transparent 98%, rgba(255, 255, 255, 0.05) 2%);
-  background-size: 2rem 2rem; 
 
   @media (min-width: 768px) {
-    margin-top: -2rem; /* Push up the content slightly on larger screens */
+    margin-top: -2rem; 
   }
 
   @media (max-width: 768px) {
@@ -32,7 +29,7 @@ const AboutSection = styled.section`
   }
 
   .about-image {
-    width: 40%;
+    width: 35%;
     @media (max-width: 768px) {
       width: 30vh;
     }
@@ -148,7 +145,6 @@ const About = () => {
                 <li>cloud architecture and scalability (notably AWS)</li>
                 <li>applications of supervised learning</li>
                 <li>data visualization tools (tableau, power BI, d3.js)</li>
-                <li>trying out different databases, both SQL and NoSQL</li>
               </ul>
             </div>
           </AccordionItem>
@@ -156,7 +152,7 @@ const About = () => {
             <div className="question">what i'm currently fixated on</div>
             <div className="answer">
               <ul>
-                <li>creating a job recommendation system powered by Spring, Apache Spark (ALS supervised model), and Postgres</li>
+                <li>creating an achievement-based restaurant recommendation service powered by Spring, Apache Spark (ALS supervised model), and Postgres</li>
                 <li>learning new applications of AWS services</li>
                 <li>learning Go and C++</li>
                 <li>creating small scripts to optimize my google calendar</li>
