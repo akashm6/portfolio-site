@@ -8,11 +8,7 @@ const ContactSection = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-color: #0d0d0d;
   color: #e6e6e6;
-  background-image: linear-gradient(transparent 98%, rgba(255, 255, 255, 0.05) 2%), 
-                    linear-gradient(90deg, transparent 98%, rgba(255, 255, 255, 0.05) 2%);
-  background-size: 2rem 2rem;
 
   .content {
     display: flex;
