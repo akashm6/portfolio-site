@@ -80,9 +80,6 @@ const HeroSection = styled.section`
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  background-image: linear-gradient(transparent 98%, rgba(255, 255, 255, 0.05) 2%), 
-                  linear-gradient(90deg, transparent 98%, rgba(255, 255, 255, 0.05) 2%);
-  background-size: 30px 30px;
 
   @media (max-width: 768px) {
     height: 90vh;
@@ -205,7 +202,7 @@ const Hero = ({ isLoaded }) => {
           <a href="https://github.com/akashm6" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
             <FaGithub />
           </a>
-          <a href="https://ivory-tamma-93.tiiny.site" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+          <a href="https://scarlet-nichol-26.tiiny.site/" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
             <FaFileLines />
           </a>
         </SocialBox>
