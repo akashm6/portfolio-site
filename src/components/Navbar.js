@@ -39,11 +39,9 @@ const MenuIcon = styled.div`
 `;
 
 const MenuItems = styled.div`
-  /* Desktop view */
   display: flex;
   gap: 20px;
 
-  /* Mobile view adjustments */
   @media (max-width: 768px) {
     flex-direction: column;
     display: ${({ isOpen }) => (isOpen ? 'flex' : 'none')};
@@ -91,6 +89,31 @@ const NavItem = styled.div`
   }
 `;
 
+const CloseButton = styled.div`
+  display: none;
+
+  @media (max-width: 768px) {
+    display: inline-block; /* Ensure it doesn't span the full width */
+    padding: 8px 16px;
+    font-size: 14px;
+    cursor: pointer;
+    border: 1px solid rgba(138, 43, 226, 0.3); 
+    border-radius: 5px;
+    color: #ccd6f6; 
+    background: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 5px rgba(138, 43, 226, 0.2);
+
+    &:hover {
+      background-color: #8a2be2;
+      color: #0d0d0d;
+      box-shadow: 0 0 10px 3px rgba(138, 43, 226, 0.5);
+      transform: scale(1.05);
+    }
+  }
+`;
+
+
 const Navbar = ({ isLoaded }) => {
   const [isOpen, setOpen] = useState(false);
 
@@ -114,6 +137,9 @@ const Navbar = ({ isLoaded }) => {
         </NavItem>
         <NavItem>
           <Link to="contact" smooth duration={500}>contact</Link>
+        </NavItem>
+        <NavItem>
+        <CloseButton onClick={() => setOpen(!isOpen)}>Close</CloseButton>
         </NavItem>
       </MenuItems>
     </NavBar>
