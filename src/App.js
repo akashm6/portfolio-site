@@ -7,9 +7,13 @@ import Projects from './sections/Projects';
 import Contact from './sections/Contact';
 import styled from 'styled-components';
 
+
 const AppContainer = styled.div`
   background-color: #0d0d0d;
   width: 100%;
+  background-image: linear-gradient(transparent 98%, rgba(255, 255, 255, 0.05) 2%), 
+                    linear-gradient(90deg, transparent 98%, rgba(255, 255, 255, 0.05) 2%);
+  background-size: 2rem 2rem; 
 `;
 
 function App() {
