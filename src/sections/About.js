@@ -30,17 +30,43 @@ const AboutSection = styled.section`
 
   .about-image {
     width: 35%;
-    @media (max-width: 768px) {
-      width: 30vh;
-    }
-    img {
-      border-radius: 0.625rem;
-      width: 100%;
-      height: auto;
+    max-height: 500px; /* Constrain image height */
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-      @media (max-width: 768px) {
-        margin-top: -1rem;
-      }
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 20px;
+      padding: 2px;
+      background: linear-gradient(180deg, rgba(138, 43, 226, 0.6), rgba(18, 35, 195, 0.6));
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: destination-out;
+      mask-composite: exclude;
+      z-index: 1;
+    }
+
+    &:hover::before {
+      background: linear-gradient(180deg, rgba(37, 12, 176, 0.8), rgba(138, 43, 226, 0.8));
+      animation: glowing-border 2s infinite;
+    }
+
+    @keyframes glowing-border {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    img {
+      border-radius: 20px;
+      width: 100%;
+      height: 100%;
+      object-fit: cover; /* Ensures the image fills the container */
     }
   }
 
@@ -49,7 +75,7 @@ const AboutSection = styled.section`
     justify-content: space-between;
     align-items: flex-start;
     gap: 3.125rem;
-    
+
     @media (max-width: 768px) {
       flex-direction: column; 
     }
@@ -65,16 +91,34 @@ const AboutSection = styled.section`
 `;
 
 const AccordionItem = styled.div`
-  background-color: #111;
+  position: relative;
   margin-bottom: 10px;
-  border: 1px solid rgba(138, 43, 226, 0.3); 
-  border-radius: 5px;
+  border-radius: 20px;
   cursor: pointer;
-  transition: all 0.3s ease;
+  background: #111;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 20px;
+    padding: 2px;
+    background: linear-gradient(180deg, rgba(138, 43, 226, 0.4), rgba(18, 35, 195, 0.4));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: destination-out;
+    mask-composite: exclude;
+    z-index: 1;
+  }
+
+  &:hover::before {
+    background: linear-gradient(180deg, rgba(37, 12, 176, 0.7), rgba(138, 43, 226, 0.7));
+  }
 
   &:hover {
-    border-color: #8a2be2;
-    box-shadow: 0 0 10px rgba(138, 43, 226, 0.5); 
+    transform: translateY(-2px);
+    box-shadow: 0px 0px 12px rgba(138, 43, 226, 0.5);
   }
 
   .question {
@@ -152,7 +196,7 @@ const About = () => {
             <div className="question">what i'm currently fixated on</div>
             <div className="answer">
               <ul>
-                <li>creating an achievement-based restaurant recommendation service powered by Spring, Apache Spark (ALS supervised model), and Postgres</li>
+                <li>Current developing SwipeByte, an AI-powered Tinder for restaurants! Powered by Spring Boot + Spring Security, Next.js, MySQL, and scikit.</li>
                 <li>learning new applications of AWS services</li>
                 <li>learning Go and C++</li>
                 <li>creating small scripts to optimize my google calendar</li>
