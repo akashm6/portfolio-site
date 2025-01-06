@@ -30,7 +30,7 @@ const AboutSection = styled.section`
 
   .about-image {
     width: 35%;
-    max-height: 500px; /* Constrain image height */
+    max-height: 500px; 
     position: relative;
     border-radius: 20px;
     overflow: hidden;
@@ -66,7 +66,7 @@ const AboutSection = styled.section`
       border-radius: 20px;
       width: 100%;
       height: 100%;
-      object-fit: cover; /* Ensures the image fills the container */
+      object-fit: cover; 
     }
   }
 
