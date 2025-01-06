@@ -30,6 +30,12 @@ const LoadingScreen = styled.div`
   align-items: center;
   height: 100vh;
   background-color: #0d0d0d;
+  background-image: 
+    linear-gradient(145deg, rgba(31, 10, 165, 0.8), rgba(77, 7, 158, 0.8)), /* Deep blue and purple gradient */
+    linear-gradient(transparent 98%, rgba(255, 255, 255, 0.05) 2%), /* Subtle grid pattern */
+    linear-gradient(90deg, transparent 98%, rgba(255, 255, 255, 0.05) 2%);
+  background-size: cover, 2rem 2rem, 2rem 2rem;
+  background-blend-mode: overlay, normal, normal;
   z-index: 10;
 
   svg {
@@ -41,7 +47,6 @@ const LoadingScreen = styled.div`
 
   .text-copy {
     fill: none;
-    stroke: white;
     stroke-dasharray: 6% 29%;
     stroke-width: 5px;
     stroke-dashoffset: 0%;
@@ -81,15 +86,17 @@ const HeroSection = styled.section`
   justify-content: center;
   align-items: flex-start;
 
-  @media (max-width: 768px) {
-    height: 90vh;
-  }
-
   color: #e6e6e6;
-  padding: 0 150px;
+  padding: 0 10%;
   position: relative;
   opacity: ${({ isLoaded }) => (isLoaded ? 1 : 0)};
   transition: opacity 1s ease-in;
+
+  @media (max-width: 768px) {
+    padding: 0 5%;
+    align-items: center;
+    text-align: center;
+  }
 
   h2 {
     font-size: clamp(40px, 8vw, 80px);
@@ -97,17 +104,12 @@ const HeroSection = styled.section`
     font-weight: 600;
     color: #fff;
     display: inline-block;
-    opacity: 0; /* Start with invisible text */
-    animation: ${({ isLoaded }) => (isLoaded ? textSlideIn : 'none')} 1s ease-out forwards; 
+    animation: ${({ isLoaded }) => (isLoaded ? textSlideIn : 'none')} 1s ease-out forwards;
 
     @media (max-width: 768px) {
-      position: absolute;
-      left: 40px;
-      top: 40vh;
+      font-size: clamp(30px, 7vw, 60px);
     }
   }
-
-    
 
   .contact-btn {
     background-color: transparent;
@@ -119,9 +121,6 @@ const HeroSection = styled.section`
     font-size: 18px;
     font-weight: 600;
     letter-spacing: 0.05em;
-    padding: 10px 20px;
-    animation: ${fadeIn} 1.5s ease-in;
-    border-radius: 5px;
     text-decoration: none;
     font-size: 16px;
     transition: all 0.3s ease;
@@ -135,10 +134,8 @@ const HeroSection = styled.section`
     }
 
     @media (max-width: 768px) {
-      position: absolute;
-      left: 40px;
-      top: 54vh;
-
+      width: 100%;
+      text-align: center;
     }
   }
 `;
@@ -149,12 +146,6 @@ const SocialBox = styled.div`
   gap: 25px;
   align-items: center;
 
-  @media (max-width: 768px) {
-      position: absolute;
-      left: 40px;
-      top: 60vh;
-    }
-
   a {
     color: #e6e6e6;
     font-size: 32px;
@@ -162,13 +153,19 @@ const SocialBox = styled.div`
     &:hover {
       color: #8a2be2;
       transform: scale(1.1);
+    }
+  }
 
-    @media (max-width: 768px) {
-        height: 100%;
-      }
+  @media (max-width: 768px) {
+    justify-content: center;
+    gap: 15px;
+
+    a {
+      font-size: 28px;
     }
   }
 `;
+
 
 const Hero = ({ isLoaded }) => {
   return (
@@ -176,33 +173,32 @@ const Hero = ({ isLoaded }) => {
       <LoadingScreen isLoaded={isLoaded}>
         <svg viewBox="0 0 960 300">
           <symbol id="s-text">
-            <text text-anchor="middle" x="50%" y="80%">A</text>
-            <text text-anchor="middle" x="52%" y="80%">A</text>
+            <text textAnchor="middle" x="50%" y="50%" dy=".35em">A</text>
           </symbol>
-          <g className="g-ants">
-            <use xlinkHref="#s-text" className="text-copy"></use>
-            <use xlinkHref="#s-text" className="text-copy"></use>
-            <use xlinkHref="#s-text" className="text-copy"></use>
-            <use xlinkHref="#s-text" className="text-copy"></use>
-            <use xlinkHref="#s-text" className="text-copy"></use>
+          <g>
+            <use className="text-copy" href="#s-text" />
+            <use className="text-copy" href="#s-text" />
+            <use className="text-copy" href="#s-text" />
+            <use className="text-copy" href="#s-text" />
+            <use className="text-copy" href="#s-text" />
           </g>
         </svg>
       </LoadingScreen>
 
-      <HeroSection id='home' isLoaded={isLoaded}>
+      <HeroSection id="home" isLoaded={isLoaded}>
         <h2>hi! i'm akash</h2>
         <Link to="contact" smooth duration={500}>
           <button className="contact-btn">get in touch!</button>
         </Link>
 
         <SocialBox>
-          <a href="https://www.linkedin.com/in/amohan7/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+          <a href="https://www.linkedin.com/in/amohan7/" target="_blank" rel="noopener noreferrer">
             <FaLinkedin />
           </a>
-          <a href="https://github.com/akashm6" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+          <a href="https://github.com/akashm6" target="_blank" rel="noopener noreferrer">
             <FaGithub />
           </a>
-          <a href="https://scarlet-nichol-26.tiiny.site/" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+          <a href="https://violet-ruthe-91.tiiny.site" target="_blank" rel="noopener noreferrer">
             <FaFileLines />
           </a>
         </SocialBox>
